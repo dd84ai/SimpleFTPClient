@@ -80,6 +80,7 @@
             this.Button_Send.TabIndex = 2;
             this.Button_Send.Text = "Send";
             this.Button_Send.UseVisualStyleBackColor = true;
+            this.Button_Send.Click += new System.EventHandler(this.Button_Send_Click);
             // 
             // button1_Receive
             // 
@@ -90,6 +91,7 @@
             this.button1_Receive.TabIndex = 3;
             this.button1_Receive.Text = "Get";
             this.button1_Receive.UseVisualStyleBackColor = true;
+            this.button1_Receive.Click += new System.EventHandler(this.button1_Receive_Click);
             // 
             // button1_Login
             // 
@@ -100,6 +102,7 @@
             this.button1_Login.TabIndex = 4;
             this.button1_Login.Text = "Login";
             this.button1_Login.UseVisualStyleBackColor = true;
+            this.button1_Login.Click += new System.EventHandler(this.button1_Login_Click);
             // 
             // button1_UserUp
             // 
@@ -121,6 +124,7 @@
             this.button1_ServerUp.TabIndex = 6;
             this.button1_ServerUp.Text = "Up";
             this.button1_ServerUp.UseVisualStyleBackColor = true;
+            this.button1_ServerUp.Click += new System.EventHandler(this.button1_ServerUp_Click);
             // 
             // button1_UserMkdir
             // 
@@ -142,6 +146,7 @@
             this.button1_ServerMkDir.TabIndex = 8;
             this.button1_ServerMkDir.Text = "MkDir";
             this.button1_ServerMkDir.UseVisualStyleBackColor = true;
+            this.button1_ServerMkDir.Click += new System.EventHandler(this.button1_ServerMkDir_Click);
             // 
             // button1_UserDelete
             // 
@@ -163,6 +168,7 @@
             this.button1_ServerDelete.TabIndex = 10;
             this.button1_ServerDelete.Text = "Del";
             this.button1_ServerDelete.UseVisualStyleBackColor = true;
+            this.button1_ServerDelete.Click += new System.EventHandler(this.button1_ServerDelete_Click);
             // 
             // button1_UserRename
             // 
@@ -184,6 +190,7 @@
             this.button1_ServerRename.TabIndex = 12;
             this.button1_ServerRename.Text = "Ren";
             this.button1_ServerRename.UseVisualStyleBackColor = true;
+            this.button1_ServerRename.Click += new System.EventHandler(this.button1_ServerRename_Click);
             // 
             // button1_UserDown
             // 
@@ -205,6 +212,7 @@
             this.button1_ServerDown.TabIndex = 14;
             this.button1_ServerDown.Text = "Down";
             this.button1_ServerDown.UseVisualStyleBackColor = true;
+            this.button1_ServerDown.Click += new System.EventHandler(this.button1_ServerDown_Click);
             // 
             // label1_UserPwd
             // 

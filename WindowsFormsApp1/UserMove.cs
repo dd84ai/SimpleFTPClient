@@ -14,35 +14,54 @@ namespace WindowsFormsApp1
     public partial class UserMove : Form
     {
         string Main = "";
-        public UserMove(string Starter)
+        bool Linuxiod = false;
+        ftp ftpClient;
+        string ServerPath;
+        public UserMove(string Starter, bool Linux = false, ftp ftpClientIn = null, string ServerPathIn = "")
         {
             InitializeComponent();
             textBox1.Text = Starter;
             Main = Starter;
+            Linuxiod = Linux;
+            ftpClient = ftpClientIn;
+            ServerPath = ServerPathIn;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string Adress = Directory.GetCurrentDirectory() + "\\" + Main.Replace("\\", "");
-            if (Main.Contains("\\"))
+            if (Linuxiod)
+            {
                 try
                 {
-                    Directory.Move(Adress, Directory.GetCurrentDirectory() + "\\" + textBox1.Text.Replace("\\", ""));
+                    ftpClient.rename(ServerPath + "/" + Main, textBox1.Text);
                 }
                 catch (Exception Err)
                 {
                     MessageBox.Show(Err.Message);
                 }
+            }
             else
-                try
-                {
-                    File.Move(Adress, Directory.GetCurrentDirectory() + "\\" + textBox1.Text.Replace("\\", ""));
-                }
-                catch (Exception Err)
-                {
-                    MessageBox.Show(Err.Message);
-                }
-
+            {
+                string Adress = Directory.GetCurrentDirectory() + "\\" + Main.Replace("\\", "");
+                if (Main.Contains("\\"))
+                    try
+                    {
+                        Directory.Move(Adress, Directory.GetCurrentDirectory() + "\\" + textBox1.Text.Replace("\\", ""));
+                    }
+                    catch (Exception Err)
+                    {
+                        MessageBox.Show(Err.Message);
+                    }
+                else
+                    try
+                    {
+                        File.Move(Adress, Directory.GetCurrentDirectory() + "\\" + textBox1.Text.Replace("\\", ""));
+                    }
+                    catch (Exception Err)
+                    {
+                        MessageBox.Show(Err.Message);
+                    }
+            }
             this.Close();
 
         }

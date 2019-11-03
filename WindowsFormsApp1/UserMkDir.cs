@@ -12,23 +12,42 @@ namespace WindowsFormsApp1
 {
     public partial class UserMkDir : Form
     {
-        public UserMkDir()
+        bool Linuxiod = false;
+        ftp ftpClient;
+        string ServerPath;
+        public UserMkDir(bool Linux = false, ftp ftpClientIn = null, string ServerPathin = "")
         {
             InitializeComponent();
+            Linuxiod = Linux;
+            ftpClient = ftpClientIn;
+            ServerPath = ServerPathin;
         }
 
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            if (Linuxiod)
             {
-                System.IO.Directory.CreateDirectory(textBox1.Text);
-                this.Close();
+                try
+                {
+                    ftpClient.createDirectory(ServerPath + "/" + textBox1.Text);
+                    this.Close();
+                }
+                catch (Exception e55)
+                {
+                    MessageBox.Show("Error: " + e55.Message);
+                }
             }
-            catch (Exception e55)
-            {
-                MessageBox.Show("Error: " + e55.Message);
-            }
+            else
+                try
+                {
+                    System.IO.Directory.CreateDirectory(textBox1.Text);
+                    this.Close();
+                }
+                catch (Exception e55)
+                {
+                    MessageBox.Show("Error: " + e55.Message);
+                }
         }
 
         private void UserMkDir_Load(object sender, EventArgs e)

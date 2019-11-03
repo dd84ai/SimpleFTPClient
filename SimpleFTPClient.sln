@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{D7EFDB1C-2B10-42CC-A052-D268C59F3637}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleFTPClient", "WindowsFormsApp1\SimpleFTPClient.csproj", "{D7EFDB1C-2B10-42CC-A052-D268C59F3637}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
